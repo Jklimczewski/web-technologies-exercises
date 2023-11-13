@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="index.css">
+  <script  type="module" src="index.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+</head>
+<body>
+  <main class="main">
+    <div class="left">
+      <form id="game-form">
+        <input type="number" class="game-input" name="size" required>
+        <input type="number" class="game-input" name="dim" required>
+        <input type="number" class="game-input" name="max" required>
+        <button type="submit" class="button">Submit</button>
+      </form>
+    </div>
+    <div class="right">
+      <div class="top">
+        <div class="res">
+        </div>
+        <div class="points">
+        </div>
+      </div>
+      <div class="botton">
+        <form id="number-form">
+          <input type="number" class="number-input" name="num1" required>
+          <input type="number" class="number-input" name="num2" required>
+          <input type="number" class="number-input" name="num3" required>
+          <input type="number" class="number-input" id="num4" required>
+          <button type="submit" class="button">Submit</button>
+        </form>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

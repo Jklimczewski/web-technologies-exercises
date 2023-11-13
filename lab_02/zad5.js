@@ -4,13 +4,16 @@ const groupMap = (tab, key, fun) => {
     keys.push(key(el));
   });
   const setKeys = new Set(keys);
-  console.log(setKeys);
-  //   tab.reduce((akum, elem) => {
-  //     const temp = key(elem);
-  //     console.log(temp);
-  //     akum[temp] = elem;
-  //     return akum;
-  //   }, {});
+
+  const res = {};
+  setKeys.forEach((el) => {
+    res[el] = [];
+  });
+  tab.forEach((elem) => {
+    const keyValue = key(fun(elem));
+    res[keyValue].push(fun(elem));
+  });
+  return res;
 };
 
 console.log(

@@ -12,9 +12,19 @@
   <main class="main">
     <div class="left">
       <form id="game-form">
-        <input type="number" class="game-input" name="size" required>
-        <input type="number" class="game-input" name="dim" required>
-        <input type="number" class="game-input" name="max" required>
+        <h1>Podaj informacje o grze!</h1>
+        <div class="inputs">
+          <label for="size">Liter do zgadnięcia: </label>
+          <input type="number" class="game-input" id="size" required />
+        </div>
+        <div class="inputs">
+          <label>Możliwe cyfry: </label>
+          <input type="number" class="game-input" id="dim" required />
+        </div>
+        <div class="inputs">
+          <label for="max">Maksymalna liczba ruchów: </label>
+          <input type="number" class="game-input" id="max" value="0" required />
+        </div>
         <button type="submit" class="button">Submit</button>
       </form>
     </div>
@@ -27,11 +37,6 @@
       </div>
       <div class="botton">
         <form id="number-form">
-          <input type="number" class="number-input" name="num1" required>
-          <input type="number" class="number-input" name="num2" required>
-          <input type="number" class="number-input" name="num3" required>
-          <input type="number" class="number-input" id="num4" required>
-          <button type="submit" class="button">Submit</button>
         </form>
       </div>
     </div>

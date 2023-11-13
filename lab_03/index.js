@@ -19,14 +19,19 @@ app.post("/mmind", (req, res) => {
   const dim = req.body.dim;
   const max = req.body.max;
   const id = uuidv4();
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * max);
+  function getRandomInt(dim) {
+    return Math.floor(Math.random() * dim);
   }
   const hidden = [];
   for (let index = 0; index < size; index++) {
-    hidden.push(getRandomInt(max));
+    hidden.push(getRandomInt(dim));
   }
-  games[id] = { code: hidden, max: max, left: max };
+  if (max == 0) {
+    games[id] = { code: hidden, max: max, left: Infinity };
+  } else {
+    games[id] = { code: hidden, max: max, left: max };
+  }
+
   res.json({ id, size, dim, max });
 });
 
@@ -35,9 +40,9 @@ app.patch("/mmind", (req, res) => {
   if (games[gameid]["left"] > 0) {
     const hidden_code = games[gameid]["code"];
     const [black, white] = ocenRuch(guesses, hidden_code);
-    games[gameid]["zostalo"] -= 1;
+    games[gameid]["left"] -= 1;
     if (black == hidden_code.length) {
-      res.send("Gra skończona!");
+      res.send("Wygrałeś");
     } else {
       res.json({ gameid, black, white });
     }

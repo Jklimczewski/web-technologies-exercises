@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link href="/css/usersList.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1><%= locals.title %></h1>
+    <ol>
+      <% locals.users.forEach((user) => { %>
+      <a href="http://localhost:3000/client/users/<%= user._id %>">
+        <li><%= user._id %></li>
+      </a>
+      <% }) %>
+    </ol>
+  </body>
+</html>

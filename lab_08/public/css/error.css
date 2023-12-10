@@ -1,0 +1,1 @@
+body,h1,span{margin:0;padding:0}body{display:flex;justify-content:center;align-items:center;height:100vh;font-family:Arial, sans-serif;background-color:#f0f0f0}div{text-align:center;background-color:#fff;padding:20px;border-radius:8px;box-shadow:0 0 10px rgba(0,0,0,0.1)}h1{color:#333;margin-bottom:10px}span{display:block;color:#ff0000;font-weight:bold}

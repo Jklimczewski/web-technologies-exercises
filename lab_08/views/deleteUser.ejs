@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.1/axios.min.js"></script>
+    <link href="/css/deleteUser.css" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <h1><%= locals.title %></h1>
+    <div class="user-details">
+      <div class="user-property">
+        <span class="property-label">ID:</span> <%= locals.user._id %>
+      </div>
+      <div class="user-property">
+        <span class="property-label">Login:</span> <%= locals.user.login %>
+      </div>
+      <div class="user-property">
+        <span class="property-label">Email:</span> <%= locals.user.email %>
+      </div>
+      <div class="user-property">
+        <span class="property-label">Password:</span> <%= locals.user.password
+        %>
+      </div>
+      <div class="user-property">
+        <span class="property-label">Registration Date:</span> <%=
+        locals.user.registrationDate %>
+      </div>
+    </div>
+    <div class="deletion-section">
+      <span class="deletion-message">Czy na pewno chcesz usunąć?</span>
+      <button id="submitDelete">Tak</button>
+    </div>
+
+    <script>
+      const submit = document.getElementById("submitDelete");
+
+      submit.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const userID = "<%= locals.userId %>";
+
+        axios
+          .delete(`http://localhost:3000/users/${userID}`)
+          .then((_response) => {
+            window.location.href = `/client/users`;
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      });
+    </script>
+  </body>
+</html>

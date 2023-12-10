@@ -1,0 +1,40 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#editUserForm {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+#editUserForm label,
+#editUserForm input,
+#editUserForm button {
+  display: block;
+  margin-bottom: 15px;
+  width: calc(100% - 30px);
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+#editUserForm button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#editUserForm button:hover {
+  background-color: #2980b9;
+}
